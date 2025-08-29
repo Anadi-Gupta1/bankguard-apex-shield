@@ -3,7 +3,6 @@ import { ThreatCounter } from "@/components/ThreatCounter";
 import { LiveThreatFeed } from "@/components/LiveThreatFeed";
 import { BankingSecurityDashboard } from "@/components/platform/BankingSecurityDashboard";
 import { APKUploadDemo } from "@/components/APKUploadDemo";
-import { AlertTriangle, Shield, Users, Activity } from "lucide-react";
 
 export const DashboardPage = () => {
   // TODO: Implement complete security dashboard with role-based access control
@@ -25,36 +24,7 @@ export const DashboardPage = () => {
 
         {/* Threat Counter Section */}
         <div className="mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ThreatCounter 
-              title="Active Threats" 
-              count={23} 
-              trend="down" 
-              icon={<AlertTriangle className="h-6 w-6" />}
-              variant="threat"
-            />
-            <ThreatCounter 
-              title="Protected Users" 
-              count={45678} 
-              trend="up" 
-              icon={<Shield className="h-6 w-6" />}
-              variant="success"
-            />
-            <ThreatCounter 
-              title="Blocked Attacks" 
-              count={892} 
-              trend="up" 
-              icon={<Users className="h-6 w-6" />}
-              variant="warning"
-            />
-            <ThreatCounter 
-              title="System Health" 
-              count={98} 
-              trend="stable" 
-              icon={<Activity className="h-6 w-6" />}
-              variant="success"
-            />
-          </div>
+          <ThreatCounter />
         </div>
 
         {/* Live Threat Feed */}

@@ -1,3 +1,9 @@
+
+// TODO: Connect to backend for ATM network status, alerts, and controls
+// TODO: Add real-time ATM map, live feed, and status cards
+// TODO: Integrate transaction monitoring, security alerts, and emergency controls
+// TODO: Add performance monitoring, fraud detection, and compliance modules
+// ...existing imports...
 import { Navigation } from "@/components/Navigation";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";

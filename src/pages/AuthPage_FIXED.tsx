@@ -15,11 +15,13 @@ export const AuthPage = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
+    // TODO: Implement real authentication
     setAuthStep('2fa');
   };
 
   const handle2FA = (e: React.FormEvent) => {
     e.preventDefault();
+    // TODO: Implement real 2FA verification
     setAuthStep('success');
     setTimeout(() => {
       window.location.href = '/dashboard';
@@ -55,7 +57,9 @@ export const AuthPage = () => {
               <Shield className="h-12 w-12 text-primary mx-auto" />
               <div>
                 <h2 className="text-xl font-semibold">Secure Login</h2>
-                <p className="text-sm text-muted-foreground">Banking-grade authentication required</p>
+                <p className="text-sm text-muted-foreground">
+                  Banking-grade authentication required
+                </p>
               </div>
             </div>
 
@@ -90,7 +94,11 @@ export const AuthPage = () => {
                     className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
                     onClick={() => setShowPassword(!showPassword)}
                   >
-                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                    {showPassword ? (
+                      <EyeOff className="h-4 w-4" />
+                    ) : (
+                      <Eye className="h-4 w-4" />
+                    )}
                   </Button>
                 </div>
               </div>
@@ -131,7 +139,9 @@ export const AuthPage = () => {
               <Shield className="h-12 w-12 text-primary mx-auto" />
               <div>
                 <h2 className="text-xl font-semibold">Two-Factor Authentication</h2>
-                <p className="text-sm text-muted-foreground">Enter your 6-digit code</p>
+                <p className="text-sm text-muted-foreground">
+                  Choose your preferred verification method
+                </p>
               </div>
             </div>
 
@@ -163,7 +173,7 @@ export const AuthPage = () => {
 
             <form onSubmit={handle2FA} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="2fa-code">Verification Code</Label>
+                <Label htmlFor="2fa-code">Enter 6-digit code</Label>
                 <Input
                   id="2fa-code"
                   value={twoFactorCode}
@@ -188,7 +198,9 @@ export const AuthPage = () => {
               <CheckCircle className="h-16 w-16 text-green-500 mx-auto" />
               <div>
                 <h2 className="text-xl font-semibold text-green-500">Authentication Successful</h2>
-                <p className="text-sm text-muted-foreground">Redirecting to dashboard...</p>
+                <p className="text-sm text-muted-foreground">
+                  Redirecting to your security dashboard...
+                </p>
               </div>
               <div className="flex items-center justify-center space-x-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce"></div>
