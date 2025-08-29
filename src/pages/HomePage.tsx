@@ -1,17 +1,27 @@
-import { Navigation } from "@/components/Navigation";
+import React, { useState, useEffect } from "react";
 import { ThreatCounter } from "@/components/ThreatCounter";
 import { APKUploadDemo } from "@/components/APKUploadDemo";
 import { LiveThreatFeed } from "@/components/LiveThreatFeed";
+import { LoadingState } from "@/components/LoadingState";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Activity, AlertTriangle, Users, Server, Eye, Zap, Globe, Lock, CheckCircle } from "lucide-react";
 
 export const HomePage = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simulate loading completion after component mounts
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingState message="Initializing BankGuard AI Security Platform..." fullScreen size="large" />;
+  }
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
-      
+    <div className="min-h-screen bg-background">      
       {/* Hero Section - Full Black with Neon Effects */}
       <section className="relative min-h-screen py-16 px-4 overflow-hidden flex items-center">
         {/* Animated Background Effects */}

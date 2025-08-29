@@ -22,7 +22,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-  {/* Persistent Navigation Bar */}
+        <Navigation />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/home" element={<HomePage />} />

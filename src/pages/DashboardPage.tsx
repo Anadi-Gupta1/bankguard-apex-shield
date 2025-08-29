@@ -1,4 +1,3 @@
-import { Navigation } from "@/components/Navigation";
 import { ThreatCounter } from "@/components/ThreatCounter";
 import { LiveThreatFeed } from "@/components/LiveThreatFeed";
 import { BankingSecurityDashboard } from "@/components/platform/BankingSecurityDashboard";
@@ -13,8 +12,7 @@ export const DashboardPage = () => {
   // TODO: Implement alert notifications and escalation workflows
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
+    <div className="min-h-screen bg-background">      
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Cybersecurity Dashboard</h1>

@@ -4,7 +4,6 @@
 // TODO: Integrate transaction monitoring, security alerts, and emergency controls
 // TODO: Add performance monitoring, fraud detection, and compliance modules
 // ...existing imports...
-import { Navigation } from "@/components/Navigation";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -56,9 +55,7 @@ export const ATMDashboard = () => {
   const totalTransactions = atmData.reduce((sum, atm) => sum + atm.transactions, 0);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
-      
+    <div className="min-h-screen bg-background">      
       <div className="container mx-auto p-6 space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
