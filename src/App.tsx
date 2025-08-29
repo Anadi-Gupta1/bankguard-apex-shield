@@ -1,4 +1,5 @@
 import { Toaster } from "@/components/ui/toaster";
+import { Navigation } from "@/components/Navigation";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -21,6 +22,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+  {/* Persistent Navigation Bar */}
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/home" element={<HomePage />} />

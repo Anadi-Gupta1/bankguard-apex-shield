@@ -61,6 +61,39 @@ export const HomePage = () => {
         </div>
       </section>
 
+      {/* 3D Model Showcase Section */}
+      <section className="py-20 px-4 bg-gradient-to-b from-background to-background/50">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 text-glow-cyan">Interactive Banking Security</h2>
+            <p className="text-foreground/70 max-w-3xl mx-auto text-lg">
+              Experience our advanced security platform through interactive 3D visualization
+            </p>
+          </div>
+
+          <div className="flex justify-center">
+            {/* Credit/Debit Card Security Visualization */}
+            <div className="max-w-4xl w-full">
+              <div className="glass-elevated p-8">
+                <h3 className="text-2xl font-semibold mb-4 text-glow-blue text-center">Card Security Analysis</h3>
+                <p className="text-foreground/70 mb-6 text-center max-w-2xl mx-auto">
+                  Real-time monitoring and protection of credit and debit card transactions with advanced fraud detection algorithms.
+                </p>
+                <div className="h-96 w-full rounded-lg overflow-hidden border border-neon-blue/30 hover:border-neon-cyan/50 transition-colors">
+                  <iframe 
+                    src='https://my.spline.design/creditdebitcard3ddesignwithanimationforweb-VoBj2BMkofCmN2mTipZyVXbL/' 
+                    frameBorder='0' 
+                    width='100%' 
+                    height='100%'
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Live Metrics Section - Neon Glass Cards */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
