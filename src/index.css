@@ -2,72 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
-/* BankGuard AI Design System - Professional Cybersecurity Theme
-All colors MUST be HSL. Dark theme with cyan/blue accents for high-tech security feel.
+/* BankGuard AI Design System - Professional Black Modern Theme
+All colors MUST be HSL. Full black background with neon cyan, electric blue, and bright green accents.
 */
 
 @layer base {
   :root {
-    /* Core Background & Text */
-    --background: 222 47% 11%;
-    --foreground: 210 40% 95%;
+    /* Core Background & Text - Full Black Theme */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    /* Cards & Surfaces */
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 95%;
-    --card-elevated: 220 39% 15%;
+    /* Cards & Surfaces - Glass Morphism */
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+    --card-elevated: 0 0% 5%;
+    --card-glass: 0 0% 10% / 0.2;
+    --card-glass-border: 180 100% 50% / 0.3;
 
     /* Popover Components */
-    --popover: 220 39% 15%;
-    --popover-foreground: 210 40% 95%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Primary Brand - Security Blue */
-    --primary: 212 100% 45%;
-    --primary-foreground: 210 40% 98%;
-    --primary-glow: 194 100% 60%;
+    /* Primary Brand - Electric Blue */
+    --primary: 214 100% 59%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 214 100% 59%;
 
-    /* Secondary - Muted Dark */
-    --secondary: 217 32% 17%;
-    --secondary-foreground: 210 40% 95%;
+    /* Secondary - Dark Glass */
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 90%;
 
     /* Muted Elements */
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
 
-    /* Accent - Bright Cyan */
-    --accent: 194 100% 60%;
-    --accent-foreground: 222 47% 11%;
+    /* Accent - Neon Cyan */
+    --accent: 180 100% 50%;
+    --accent-foreground: 0 0% 0%;
 
-    /* Status Colors */
+    /* Neon Colors */
+    --neon-cyan: 180 100% 50%;
+    --neon-blue: 214 100% 59%;
+    --neon-green: 142 71% 45%;
+    --neon-purple: 271 91% 65%;
+
+    /* Status Colors - Neon Enhanced */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-    --success: 142 76% 36%;
-    --success-foreground: 210 40% 98%;
-    --warning: 38 92% 50%;
-    --warning-foreground: 222 47% 11%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 93% 58%;
+    --warning-foreground: 0 0% 0%;
 
     /* Interface Elements */
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 194 100% 60%;
+    --border: 0 0% 20%;
+    --input: 0 0% 10%;
+    --ring: 180 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--primary)));
-    --gradient-threat: linear-gradient(135deg, hsl(var(--destructive)), hsl(38 92% 50%));
-    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(142 100% 60%));
-    --gradient-bg: linear-gradient(180deg, hsl(var(--background)), hsl(220 39% 8%));
+    /* Gradients - Neon Enhanced */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--neon-blue)), hsl(var(--neon-cyan)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--neon-cyan)), hsl(var(--neon-purple)));
+    --gradient-threat: linear-gradient(135deg, hsl(var(--destructive)), hsl(var(--warning)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--neon-green)), hsl(142 100% 60%));
+    --gradient-multicolor: linear-gradient(135deg, hsl(var(--neon-cyan)), hsl(var(--neon-blue)), hsl(var(--neon-green)));
+    --gradient-bg: radial-gradient(ellipse at center, hsl(0 0% 5%), hsl(var(--background)));
+
+    /* Neon Glow Effects */
+    --glow-cyan: 0 0 20px hsl(var(--neon-cyan) / 0.5), 0 0 40px hsl(var(--neon-cyan) / 0.3), 0 0 60px hsl(var(--neon-cyan) / 0.1);
+    --glow-blue: 0 0 20px hsl(var(--neon-blue) / 0.5), 0 0 40px hsl(var(--neon-blue) / 0.3), 0 0 60px hsl(var(--neon-blue) / 0.1);
+    --glow-green: 0 0 20px hsl(var(--neon-green) / 0.5), 0 0 40px hsl(var(--neon-green) / 0.3), 0 0 60px hsl(var(--neon-green) / 0.1);
+    --glow-purple: 0 0 20px hsl(var(--neon-purple) / 0.5), 0 0 40px hsl(var(--neon-purple) / 0.3), 0 0 60px hsl(var(--neon-purple) / 0.1);
+
+    /* Glass Morphism */
+    --glass-bg: hsl(0 0% 10% / 0.2);
+    --glass-border: hsl(var(--neon-cyan) / 0.3);
+    --glass-blur: blur(20px);
 
     /* Shadows & Effects */
-    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
-    --shadow-threat: 0 0 20px hsl(var(--destructive) / 0.3);
-    --shadow-success: 0 0 20px hsl(var(--success) / 0.3);
-    --shadow-elevated: 0 8px 32px hsl(220 39% 8% / 0.4);
+    --shadow-glow: var(--glow-cyan);
+    --shadow-threat: var(--glow-green);
+    --shadow-success: var(--glow-green);
+    --shadow-elevated: 0 8px 32px hsl(0 0% 0% / 0.5);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: box-shadow 0.3s ease-in-out;
     --pulse-duration: 2s;
 
     /* Sidebar */
@@ -91,6 +112,7 @@ All colors MUST be HSL. Dark theme with cyan/blue accents for high-tech security
     @apply bg-background text-foreground antialiased;
     background: var(--gradient-bg);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    overflow-x: hidden;
   }
 
   html {
@@ -99,22 +121,87 @@ All colors MUST be HSL. Dark theme with cyan/blue accents for high-tech security
 }
 
 @layer components {
-  /* Glow effects for interactive elements */
+  /* Neon Glow Effects */
+  .glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+
+  .glow-blue {
+    box-shadow: var(--glow-blue);
+  }
+
+  .glow-green {
+    box-shadow: var(--glow-green);
+  }
+
+  .glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+
   .glow-primary {
-    box-shadow: var(--shadow-glow);
+    box-shadow: var(--glow-blue);
   }
 
   .glow-threat {
-    box-shadow: var(--shadow-threat);
+    box-shadow: var(--glow-green);
   }
 
   .glow-success {
-    box-shadow: var(--shadow-success);
+    box-shadow: var(--glow-green);
   }
 
-  /* Pulse animation for live elements */
+  /* Glass Morphism */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+  }
+
+  .glass-elevated {
+    background: hsl(0 0% 10% / 0.3);
+    backdrop-filter: blur(24px);
+    border: 1px solid hsl(var(--neon-cyan) / 0.2);
+    box-shadow: var(--shadow-elevated), var(--glow-cyan);
+  }
+
+  /* Neon Text Effects */
+  .text-glow-cyan {
+    color: hsl(var(--neon-cyan));
+    text-shadow: 0 0 10px hsl(var(--neon-cyan) / 0.5);
+  }
+
+  .text-glow-blue {
+    color: hsl(var(--neon-blue));
+    text-shadow: 0 0 10px hsl(var(--neon-blue) / 0.5);
+  }
+
+  .text-glow-green {
+    color: hsl(var(--neon-green));
+    text-shadow: 0 0 10px hsl(var(--neon-green) / 0.5);
+  }
+
+  .text-gradient-neon {
+    background: var(--gradient-multicolor);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Pulse Animations */
   .pulse-live {
     animation: pulse-live var(--pulse-duration) infinite;
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
   }
 
   @keyframes pulse-live {
@@ -122,7 +209,18 @@ All colors MUST be HSL. Dark theme with cyan/blue accents for high-tech security
     50% { opacity: 0.7; }
   }
 
-  /* Gradient backgrounds */
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: var(--glow-cyan);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: var(--glow-cyan), 0 0 40px hsl(var(--neon-cyan) / 0.7);
+      transform: scale(1.02);
+    }
+  }
+
+  /* Gradient Backgrounds */
   .bg-gradient-primary {
     background: var(--gradient-primary);
   }
@@ -139,14 +237,47 @@ All colors MUST be HSL. Dark theme with cyan/blue accents for high-tech security
     background: var(--gradient-success);
   }
 
-  /* Elevated surfaces */
-  .surface-elevated {
-    background: hsl(var(--card-elevated));
-    box-shadow: var(--shadow-elevated);
+  .bg-gradient-multicolor {
+    background: var(--gradient-multicolor);
   }
 
-  /* Smooth transitions */
+  /* Interactive Elements */
+  .hover-glow {
+    transition: var(--transition-glow);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--glow-cyan);
+    transform: translateY(-2px);
+  }
+
+  /* Smooth Transitions */
   .transition-smooth {
     transition: var(--transition-smooth);
+  }
+
+  .transition-glow {
+    transition: var(--transition-glow);
+  }
+
+  /* Floating Elements */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Neon Border */
+  .border-neon {
+    border: 1px solid hsl(var(--neon-cyan));
+    box-shadow: 0 0 10px hsl(var(--neon-cyan) / 0.3);
+  }
+
+  .border-neon-dashed {
+    border: 2px dashed hsl(var(--neon-cyan));
+    box-shadow: 0 0 15px hsl(var(--neon-cyan) / 0.4);
   }
 }

@@ -9,20 +9,19 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 glow-primary",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 glow-threat",
-        outline:
-          "border border-border bg-background/50 backdrop-blur-sm hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-primary text-primary-foreground hover:shadow-lg hover:scale-105 glow-primary",
-        emergency: "bg-gradient-threat text-destructive-foreground hover:shadow-lg animate-pulse glow-threat",
-        success: "bg-gradient-success text-success-foreground hover:shadow-lg glow-success",
-        secure: "bg-card-elevated border border-primary/20 text-foreground hover:border-primary/40 hover:bg-card-elevated/80",
-        live: "bg-accent text-accent-foreground pulse-live hover:bg-accent/90",
+        default: "bg-neon-blue text-foreground glow-blue hover:glow-cyan transition-glow",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 glow-green",
+        outline: "border border-neon-cyan bg-glass-bg backdrop-blur-sm hover:bg-neon-cyan/10 hover:glow-cyan transition-glow",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost: "hover:bg-accent/20 hover:text-neon-cyan transition-glow",
+        link: "text-neon-cyan underline-offset-4 hover:underline text-glow-cyan",
+        hero: "bg-gradient-primary text-foreground glow-blue hover:glow-cyan hover:scale-105 transition-all duration-300",
+        emergency: "bg-gradient-threat text-foreground pulse-glow glow-green",
+        success: "bg-gradient-success text-foreground glow-green hover:glow-cyan transition-glow",
+        secure: "glass-card border-neon-cyan/30 text-foreground hover:border-neon-cyan hover:glow-cyan transition-glow",
+        live: "bg-neon-cyan text-background pulse-glow font-semibold",
+        neon: "bg-neon-cyan text-background glow-cyan hover:bg-neon-blue hover:glow-blue transition-all duration-300",
+        glass: "glass-elevated text-foreground hover:glow-cyan transition-glow",
       },
       size: {
         default: "h-10 px-4 py-2",

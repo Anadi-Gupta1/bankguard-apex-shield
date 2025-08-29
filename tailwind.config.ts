@@ -71,6 +71,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				neon: {
+					cyan: 'hsl(var(--neon-cyan))',
+					blue: 'hsl(var(--neon-blue))',
+					green: 'hsl(var(--neon-green))',
+					purple: 'hsl(var(--neon-purple))'
+				},
+				glass: {
+					bg: 'var(--glass-bg)',
+					border: 'var(--glass-border)'
 				}
 			},
 			borderRadius: {
@@ -100,9 +110,12 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'pulse-live': 'pulse-live 2s infinite',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
 				'spin-slow': 'spin 3s linear infinite',
 				'fade-in': 'fade-in 0.5s ease-out',
-				'slide-up': 'slide-up 0.3s ease-out'
+				'slide-up': 'slide-up 0.3s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'gradient-shift': 'gradient-shift 3s ease infinite'
 			},
 			fontFamily: {
 				'mono': ['JetBrains Mono', 'Fira Code', 'monospace'],

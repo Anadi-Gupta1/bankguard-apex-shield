@@ -12,230 +12,237 @@ export const HomePage = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="relative py-16 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10"></div>
+      {/* Hero Section - Full Black with Neon Effects */}
+      <section className="relative min-h-screen py-16 px-4 overflow-hidden flex items-center">
+        {/* Animated Background Effects */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute bottom-10 right-20 w-24 h-24 bg-accent/20 rounded-full blur-lg animate-pulse"></div>
-          <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-success/20 rounded-full blur-md animate-pulse"></div>
+          <div className="absolute top-20 left-10 w-32 h-32 bg-neon-cyan/20 rounded-full blur-xl float-animation"></div>
+          <div className="absolute bottom-20 right-20 w-24 h-24 bg-neon-blue/20 rounded-full blur-lg float-animation" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-neon-green/20 rounded-full blur-md float-animation" style={{ animationDelay: '4s' }}></div>
+          <div className="absolute top-32 right-1/4 w-20 h-20 bg-neon-purple/20 rounded-full blur-lg float-animation" style={{ animationDelay: '1s' }}></div>
         </div>
         
-        <div className="relative container mx-auto text-center space-y-8">
-          <div className="space-y-4">
-            <Badge variant="outline" className="px-4 py-2 text-sm bg-primary/10 border-primary/20">
-              <Activity className="h-4 w-4 mr-2" />
-              LIVE PROTOTYPE - Real Threats Being Blocked
+        <div className="relative container mx-auto text-center space-y-8 z-10">
+          <div className="space-y-6">
+            <Badge variant="outline" className="px-6 py-3 text-sm glass-elevated border-neon-cyan glow-cyan pulse-glow">
+              <Activity className="h-4 w-4 mr-2 text-neon-cyan" />
+              <span className="text-glow-cyan font-semibold">LIVE SYSTEM - Real Threats Being Blocked</span>
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            
+            <h1 className="text-6xl md:text-8xl font-bold text-gradient-neon leading-tight">
               BankGuard AI
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-              Advanced Banking Security Platform with Real-Time APK Threat Detection
-            </p>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-              Protect your bank and customers from malicious apps using cutting-edge AI, 
-              comprehensive monitoring, and instant emergency response capabilities.
-            </p>
+            
+            <div className="space-y-4">
+              <p className="text-2xl md:text-3xl text-glow-cyan max-w-4xl mx-auto font-medium">
+                Advanced Banking Security Platform with Real-Time APK Threat Detection
+              </p>
+              <p className="text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+                Protect your bank and customers from malicious apps using cutting-edge AI, 
+                comprehensive monitoring, and instant emergency response capabilities.
+              </p>
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="hero" size="lg" className="text-lg px-8 py-4">
-              <Shield className="h-5 w-5 mr-2" />
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
+            <Button variant="hero" size="lg" className="text-lg px-10 py-5 font-semibold">
+              <Shield className="h-6 w-6 mr-3" />
               Access Live System
             </Button>
-            <Button variant="emergency" size="lg" className="text-lg px-8 py-4">
-              <Zap className="h-5 w-5 mr-2" />
+            <Button variant="emergency" size="lg" className="text-lg px-10 py-5 font-semibold">
+              <Zap className="h-6 w-6 mr-3" />
               Emergency Demo Mode
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-              <Eye className="h-5 w-5 mr-2" />
+            <Button variant="outline" size="lg" className="text-lg px-10 py-5 font-semibold">
+              <Eye className="h-6 w-6 mr-3" />
               Test APK Blocking
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Live Metrics Section */}
-      <section className="py-12 px-4">
+      {/* Live Metrics Section - Neon Glass Cards */}
+      <section className="py-16 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-2">Real-Time Security Metrics</h2>
-            <p className="text-muted-foreground">Live data from our active threat detection system</p>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 text-glow-cyan">Real-Time Security Metrics</h2>
+            <p className="text-foreground/70 text-lg">Live data from our active threat detection system</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <ThreatCounter
               title="Active Threats Blocked"
               count={2847}
               trend="up"
-              icon={<AlertTriangle className="h-8 w-8" />}
+              icon={<AlertTriangle className="h-10 w-10" />}
               variant="threat"
             />
             <ThreatCounter
               title="APKs Under Analysis"
               count={156}
               trend="stable"
-              icon={<Activity className="h-8 w-8" />}
+              icon={<Activity className="h-10 w-10" />}
               variant="default"
             />
             <ThreatCounter
               title="Emergency Alerts"
               count={7}
               trend="down"
-              icon={<Zap className="h-8 w-8" />}
+              icon={<Zap className="h-10 w-10" />}
               variant="warning"
             />
             <ThreatCounter
               title="Protected Users"
               count={98234}
               trend="up"
-              icon={<Users className="h-8 w-8" />}
+              icon={<Users className="h-10 w-10" />}
               variant="success"
             />
           </div>
         </div>
       </section>
 
-      {/* Main Demo Section */}
-      <section className="py-12 px-4">
+      {/* Main Demo Section - Interactive Glass Panels */}
+      <section className="py-16 px-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
               <APKUploadDemo />
             </div>
-            <div className="space-y-6">
+            <div className="space-y-8">
               <LiveThreatFeed />
               
-              <Card className="p-6 surface-elevated">
-                <h3 className="text-lg font-semibold mb-4">System Performance</h3>
-                <div className="space-y-4">
+              <div className="glass-elevated p-8 hover-glow transition-glow">
+                <h3 className="text-xl font-semibold mb-6 text-glow-cyan">System Performance</h3>
+                <div className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm">Analysis Speed</span>
-                    <span className="text-sm font-mono text-success">2.3s avg</span>
+                    <span className="text-foreground/80">Analysis Speed</span>
+                    <span className="text-lg font-mono text-glow-green font-bold">2.3s avg</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm">Detection Accuracy</span>
-                    <span className="text-sm font-mono text-success">99.7%</span>
+                    <span className="text-foreground/80">Detection Accuracy</span>
+                    <span className="text-lg font-mono text-glow-green font-bold">99.7%</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm">System Uptime</span>
-                    <span className="text-sm font-mono text-success">99.99%</span>
+                    <span className="text-foreground/80">System Uptime</span>
+                    <span className="text-lg font-mono text-glow-green font-bold">99.99%</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm">False Positives</span>
-                    <span className="text-sm font-mono text-success">0.02%</span>
+                    <span className="text-foreground/80">False Positives</span>
+                    <span className="text-lg font-mono text-glow-green font-bold">0.02%</span>
                   </div>
                 </div>
-              </Card>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 px-4 bg-card/30">
+      {/* Features Section - Glass Morphism Cards */}
+      <section className="py-20 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Comprehensive Banking Security</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 text-glow-cyan">Comprehensive Banking Security</h2>
+            <p className="text-foreground/70 max-w-3xl mx-auto text-lg">
               Every feature is built to be operational, ensuring real-time threat detection and response
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="p-6 surface-elevated">
-              <Shield className="h-10 w-10 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Real-Time APK Detection</h3>
-              <p className="text-sm text-muted-foreground mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="glass-elevated p-8 hover-glow transition-all duration-300 group">
+              <Shield className="h-12 w-12 text-neon-blue mb-6 glow-blue group-hover:text-neon-cyan group-hover:glow-cyan transition-all" />
+              <h3 className="text-xl font-semibold mb-4 text-glow-blue group-hover:text-glow-cyan transition-colors">Real-Time APK Detection</h3>
+              <p className="text-foreground/70 mb-6 leading-relaxed">
                 Continuous monitoring with AI-powered static and dynamic analysis
               </p>
-              <Button variant="outline" size="sm">Learn More</Button>
-            </Card>
+              <Button variant="outline" size="sm" className="group-hover:glow-cyan">Learn More</Button>
+            </div>
 
-            <Card className="p-6 surface-elevated">
-              <Lock className="h-10 w-10 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Banking-Grade Auth</h3>
-              <p className="text-sm text-muted-foreground mb-4">
+            <div className="glass-elevated p-8 hover-glow transition-all duration-300 group">
+              <Lock className="h-12 w-12 text-neon-green mb-6 glow-green group-hover:text-neon-cyan group-hover:glow-cyan transition-all" />
+              <h3 className="text-xl font-semibold mb-4 text-glow-green group-hover:text-glow-cyan transition-colors">Banking-Grade Auth</h3>
+              <p className="text-foreground/70 mb-6 leading-relaxed">
                 Multi-factor authentication with role-based access control
               </p>
-              <Button variant="outline" size="sm">Learn More</Button>
-            </Card>
+              <Button variant="outline" size="sm" className="group-hover:glow-cyan">Learn More</Button>
+            </div>
 
-            <Card className="p-6 surface-elevated">
-              <Zap className="h-10 w-10 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Emergency Response</h3>
-              <p className="text-sm text-muted-foreground mb-4">
+            <div className="glass-elevated p-8 hover-glow transition-all duration-300 group">
+              <Zap className="h-12 w-12 text-neon-purple mb-6 glow-purple group-hover:text-neon-cyan group-hover:glow-cyan transition-all" />
+              <h3 className="text-xl font-semibold mb-4 text-glow-purple group-hover:text-glow-cyan transition-colors">Emergency Response</h3>
+              <p className="text-foreground/70 mb-6 leading-relaxed">
                 Instant threat blocking and automated security measures
               </p>
-              <Button variant="outline" size="sm">Learn More</Button>
-            </Card>
+              <Button variant="outline" size="sm" className="group-hover:glow-cyan">Learn More</Button>
+            </div>
 
-            <Card className="p-6 surface-elevated">
-              <Activity className="h-10 w-10 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Live Monitoring</h3>
-              <p className="text-sm text-muted-foreground mb-4">
+            <div className="glass-elevated p-8 hover-glow transition-all duration-300 group">
+              <Activity className="h-12 w-12 text-neon-cyan mb-6 glow-cyan group-hover:text-neon-blue group-hover:glow-blue transition-all" />
+              <h3 className="text-xl font-semibold mb-4 text-glow-cyan group-hover:text-glow-blue transition-colors">Live Monitoring</h3>
+              <p className="text-foreground/70 mb-6 leading-relaxed">
                 Real-time dashboards for bank staff and security analysts
               </p>
-              <Button variant="outline" size="sm">Learn More</Button>
-            </Card>
+              <Button variant="outline" size="sm" className="group-hover:glow-blue">Learn More</Button>
+            </div>
 
-            <Card className="p-6 surface-elevated">
-              <Server className="h-10 w-10 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">ATM Network Security</h3>
-              <p className="text-sm text-muted-foreground mb-4">
+            <div className="glass-elevated p-8 hover-glow transition-all duration-300 group">
+              <Server className="h-12 w-12 text-neon-blue mb-6 glow-blue group-hover:text-neon-green group-hover:glow-green transition-all" />
+              <h3 className="text-xl font-semibold mb-4 text-glow-blue group-hover:text-glow-green transition-colors">ATM Network Security</h3>
+              <p className="text-foreground/70 mb-6 leading-relaxed">
                 Comprehensive monitoring and control of ATM infrastructure
               </p>
-              <Button variant="outline" size="sm">Learn More</Button>
-            </Card>
+              <Button variant="outline" size="sm" className="group-hover:glow-green">Learn More</Button>
+            </div>
 
-            <Card className="p-6 surface-elevated">
-              <Globe className="h-10 w-10 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Global Threat Intel</h3>
-              <p className="text-sm text-muted-foreground mb-4">
+            <div className="glass-elevated p-8 hover-glow transition-all duration-300 group">
+              <Globe className="h-12 w-12 text-neon-green mb-6 glow-green group-hover:text-neon-purple group-hover:glow-purple transition-all" />
+              <h3 className="text-xl font-semibold mb-4 text-glow-green group-hover:text-glow-purple transition-colors">Global Threat Intel</h3>
+              <p className="text-foreground/70 mb-6 leading-relaxed">
                 Integration with worldwide threat intelligence networks
               </p>
-              <Button variant="outline" size="sm">Learn More</Button>
-            </Card>
+              <Button variant="outline" size="sm" className="group-hover:glow-purple">Learn More</Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Security Certifications */}
-      <section className="py-12 px-4">
+      {/* Security Certifications - Neon Badges */}
+      <section className="py-16 px-4">
         <div className="container mx-auto">
           <div className="text-center">
-            <h3 className="text-xl font-semibold mb-6">Banking Security Standards Compliance</h3>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-              <Badge variant="outline" className="px-4 py-2">
-                <CheckCircle className="h-4 w-4 mr-2" />
-                SOC 2 Type II
+            <h3 className="text-2xl font-semibold mb-8 text-glow-cyan">Banking Security Standards Compliance</h3>
+            <div className="flex flex-wrap justify-center items-center gap-6">
+              <Badge variant="outline" className="px-6 py-3 glass-card border-neon-green glow-green hover:glow-cyan transition-glow">
+                <CheckCircle className="h-5 w-5 mr-3 text-neon-green" />
+                <span className="text-glow-green font-semibold">SOC 2 Type II</span>
               </Badge>
-              <Badge variant="outline" className="px-4 py-2">
-                <CheckCircle className="h-4 w-4 mr-2" />
-                PCI DSS Level 1
+              <Badge variant="outline" className="px-6 py-3 glass-card border-neon-blue glow-blue hover:glow-cyan transition-glow">
+                <CheckCircle className="h-5 w-5 mr-3 text-neon-blue" />
+                <span className="text-glow-blue font-semibold">PCI DSS Level 1</span>
               </Badge>
-              <Badge variant="outline" className="px-4 py-2">
-                <CheckCircle className="h-4 w-4 mr-2" />
-                ISO 27001
+              <Badge variant="outline" className="px-6 py-3 glass-card border-neon-cyan glow-cyan hover:glow-green transition-glow">
+                <CheckCircle className="h-5 w-5 mr-3 text-neon-cyan" />
+                <span className="text-glow-cyan font-semibold">ISO 27001</span>
               </Badge>
-              <Badge variant="outline" className="px-4 py-2">
-                <CheckCircle className="h-4 w-4 mr-2" />
-                GDPR Compliant
+              <Badge variant="outline" className="px-6 py-3 glass-card border-neon-purple glow-purple hover:glow-blue transition-glow">
+                <CheckCircle className="h-5 w-5 mr-3 text-neon-purple" />
+                <span className="text-glow-purple font-semibold">GDPR Compliant</span>
               </Badge>
-              <Badge variant="outline" className="px-4 py-2">
-                <CheckCircle className="h-4 w-4 mr-2" />
-                FedRAMP Ready
+              <Badge variant="outline" className="px-6 py-3 glass-card border-neon-green glow-green hover:glow-purple transition-glow">
+                <CheckCircle className="h-5 w-5 mr-3 text-neon-green" />
+                <span className="text-glow-green font-semibold">FedRAMP Ready</span>
               </Badge>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-8 px-4">
-        <div className="container mx-auto text-center text-sm text-muted-foreground">
-          <p>© 2024 BankGuard AI. Advanced Banking Security Platform. All rights reserved.</p>
+      {/* Footer - Minimal Neon */}
+      <footer className="border-t border-neon-cyan/20 py-12 px-4 glass-card">
+        <div className="container mx-auto text-center">
+          <p className="text-foreground/60 text-sm">
+            © 2024 <span className="text-glow-cyan font-semibold">BankGuard AI</span>. Advanced Banking Security Platform. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
