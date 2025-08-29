@@ -18,12 +18,16 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
+import { signOut } from "firebase/auth";
+import { auth } from "@/config/firebase";
 
 export const Navigation = () => {
   const [isLive, setIsLive] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { currentUser } = useAuth();
 
   const navigationItems = [
     { path: "/", label: "Home", icon: Home },
@@ -43,8 +47,13 @@ export const Navigation = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const handleLogout = () => {
-    navigate("/auth");
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate("/");
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
   };
 
   return (
